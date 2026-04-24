@@ -28,6 +28,7 @@ $
 
 #include <unistd.h>
 
+//Check if char exists in string2
 int in_str(char c, char *str)
 {
     int i = 0;
@@ -41,6 +42,7 @@ int in_str(char c, char *str)
     return(0);
 }
 
+// Check if already appeared before in string1
 int already_seen(char *str, int index)
 {
     int i = 0;
