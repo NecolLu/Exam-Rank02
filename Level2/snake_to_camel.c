@@ -38,6 +38,7 @@ int main(int argc, char **argv)
         {
             c = argv[1][i];
 
+            // if c was '_' then go into the if statement and ignore the else statement, thus never got printed and only increment
             if (c == '_')
                 capitalize = 1;
             else
