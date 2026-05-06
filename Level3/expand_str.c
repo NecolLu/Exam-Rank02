@@ -68,6 +68,6 @@ int main(int argc, char **argv)
                 write(1, "   ", 3);
         }
     }
-    write(1, "\n", 1);
+    write(1, "\n", 1);  // Always print a newline at the end
     return (0);
 }
