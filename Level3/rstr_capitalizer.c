@@ -29,23 +29,27 @@ $>
 */
 #include <unistd.h>
 
-void rstr_capitalizer(char *str)
+void	rstr_capitalizer(char *str)
 {
-    int i = 0;
-    
-    while (str[i])
-    {
-        if (str[i] >= 'A' && str[i] <= 'Z')
-            str[i] += 32;
+	int i = 0;
 
-        if ((str[i] >= 'a' && str[i] <= 'z'))
-        {
-            if (str[i + 1] == ' ' || str[i + 1] == '\t' || str[i + 1] == '\0')
-                str[i] -= 32;
-        }
-        write(1, &str[i], 1);
-        i++;
-    }
+	while (str[i])
+	{
+		// 1. If it's an uppercase letter, make it lowercase first
+		if (str[i] >= 'A' && str[i] <= 'Z')
+			str[i] += 32;
+
+		// 2. Check if the current character is a letter
+		if ((str[i] >= 'a' && str[i] <= 'z'))
+		{
+			// 3. Check if it's the last letter of a word
+			// (Next char is space, tab, or end of string)
+			if (str[i + 1] == ' ' || str[i + 1] == '\t' || str[i + 1] == '\0')
+				str[i] -= 32; // Capitalize
+		}
+		write(1, &str[i], 1);
+		i++;
+	}
 }
 
 int main(int argc, char **argv)

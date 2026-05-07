@@ -67,10 +67,10 @@ int main(int argc, char **argv)
         {
            c = argv[1][i];
 
-        if (in_str(c, argv[2]) && !already_seen(argv[1], i))
-            write(1, &c, 1);
+            if (in_str(c, argv[2]) && !already_seen(argv[1], i))
+                write(1, &c, 1);
 
-        i++;
+            i++;
         }
     }
     write(1, "\n", 1);
